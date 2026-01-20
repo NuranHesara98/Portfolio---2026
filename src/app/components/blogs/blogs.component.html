@@ -1,0 +1,33 @@
+<section id="blogs" class="blogs">
+  <div class="container">
+    <h2 class="section-title">Blog & Articles</h2>
+    <p class="section-subtitle">Sharing knowledge and experiences through writing</p>
+
+    <div class="blogs-grid">
+      <article class="blog-card" *ngFor="let blog of blogs">
+        <div class="blog-image-wrapper">
+          <img [src]="blog.image" [alt]="blog.title" class="blog-image">
+          <div class="blog-date">
+            {{ formatDate(blog.publishDate) }}
+          </div>
+        </div>
+
+        <div class="blog-content">
+          <h3 class="blog-title">{{ blog.title }}</h3>
+          <p class="blog-description">{{ blog.description }}</p>
+          
+          <div class="blog-tags" *ngIf="blog.tags && blog.tags.length > 0">
+            <span class="blog-tag" *ngFor="let tag of blog.tags">
+              #{{ tag }}
+            </span>
+          </div>
+
+          <a [href]="blog.url" target="_blank" class="read-more-btn">
+            Read Article
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="section-title">{{ aboutTitle }}</h2>
+    <div class="about-content">
+      <div class="about-intro">
+        <p class="intro-text">{{ introduction }}</p>
+      </div>
+
+      <div class="what-i-do">
+        <h3>What I Do</h3>
+        <div class="services-grid">
+          <div class="service-card" *ngFor="let service of whatIDo">
+            <div class="service-icon">{{ service.icon }}</div>
+            <h4>{{ service.title }}</h4>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="interests">
+        <h3>My Interests</h3>
+        <div class="interests-list">
+          <span class="interest-tag" *ngFor="let interest of interests">
+            {{ interest }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

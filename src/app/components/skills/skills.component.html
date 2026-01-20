@@ -1,0 +1,59 @@
+<section id="skills" class="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    
+    <div class="skills-categories">
+      <!-- Programming Languages -->
+      <div class="skill-category">
+        <h3 class="category-title">Programming Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-card" *ngFor="let skill of languages">
+            <div class="skill-icon-wrapper">
+              <img [src]="skill.icon" [alt]="skill.name" class="skill-icon">
+            </div>
+            <div class="skill-name">{{ skill.name }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frameworks -->
+      <div class="skill-category">
+        <h3 class="category-title">Tools</h3>
+        <div class="skills-grid">
+          <div class="skill-card" *ngFor="let skill of tools">
+            <div class="skill-icon-wrapper">
+              <img [src]="skill.icon" [alt]="skill.name" class="skill-icon">
+            </div>
+            <div class="skill-name">{{ skill.name }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div class="skill-category">
+        <h3 class="category-title">DevOps & Cloud</h3>
+        <div class="skills-grid">
+          <div class="skill-card" *ngFor="let skill of devops">
+            <div class="skill-icon-wrapper">
+              <img [src]="skill.icon" [alt]="skill.name" class="skill-icon">
+            </div>
+            <div class="skill-name">{{ skill.name }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="skill-category">
+        <h3 class="category-title">Soft Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-card" *ngFor="let skill of softSkills">
+            <div class="skill-icon-wrapper">
+              <img [src]="skill.icon" [alt]="skill.name" class="skill-icon">
+            </div>
+            <div class="skill-name">{{ skill.name }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

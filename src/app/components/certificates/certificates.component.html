@@ -1,0 +1,69 @@
+<section id="certificates" class="certificates">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+    
+    <div class="slideshow-container">
+      <div class="certificate-slide">
+        <div class="certificate-image-wrapper">
+          <img [src]="currentCertificate.image" [alt]="currentCertificate.name" class="certificate-image">
+        </div>
+        
+        <div class="certificate-info">
+          <h3 class="certificate-name">{{ currentCertificate.name }}</h3>
+          <p class="certificate-issuer">
+            <span class="issuer-icon">🏆</span>
+            {{ currentCertificate.issuer }}
+          </p>
+          <p class="certificate-date">
+            <span class="date-icon">📅</span>
+            {{ formatDate(currentCertificate.issueDate) }}
+          </p>
+          <p class="certificate-description">{{ currentCertificate.description }}</p>
+          <a 
+            *ngIf="currentCertificate.credentialUrl" 
+            [href]="currentCertificate.credentialUrl" 
+            target="_blank" 
+            class="verify-btn">
+            Verify Credential
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation arrows -->
+      <button class="slide-btn prev-btn" (click)="previous()">
+        ❮
+      </button>
+      <button class="slide-btn next-btn" (click)="next()">
+        ❯
+      </button>
+
+      <!-- Dots -->
+      <div class="dots-container">
+        <span 
+          *ngFor="let cert of certificates; let i = index" 
+          class="dot" 
+          [class.active]="i === currentIndex"
+          (click)="goToSlide(i)">
+        </span>
+      </div>
+    </div>
+
+    <!-- All certificates grid -->
+    <div class="all-certificates">
+      <h3>All Certifications</h3>
+      <div class="certificates-grid">
+        <div 
+          class="certificate-card" 
+          *ngFor="let cert of certificates; let i = index"
+          [class.active]="i === currentIndex"
+          (click)="goToSlide(i)">
+          <img [src]="cert.image" [alt]="cert.name" class="cert-thumbnail">
+          <div class="cert-card-content">
+            <h4>{{ cert.name }}</h4>
+            <p>{{ cert.issuer }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,67 @@
+<section id="experience" class="experience">
+  <div class="container">
+    <h2 class="section-title">Experience & Education</h2>
+
+    <!-- Work Experience -->
+    <div class="experience-category">
+      <h3 class="category-title">
+        <span class="category-icon">💼</span>
+        Work Experience
+      </h3>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let exp of workExperience">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="experience-header">
+              <div>
+                <h4 class="experience-title">{{ exp.title }}</h4>
+                <p class="experience-organization">{{ exp.organization }}</p>
+                <p class="experience-location">📍 {{ exp.location }}</p>
+              </div>
+              <div class="experience-date">
+                <span class="date-badge" [class.current]="exp.current">
+                  {{ formatDate(exp.startDate) }} - {{ exp.current ? 'Present' : formatDate(exp.endDate!) }}
+                </span>
+              </div>
+            </div>
+            <p class="experience-description">{{ exp.description }}</p>
+            <ul class="achievements-list" *ngIf="exp.achievements && exp.achievements.length > 0">
+              <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="experience-category">
+      <h3 class="category-title">
+        <span class="category-icon">🎓</span>
+        Education
+      </h3>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let exp of education">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="experience-header">
+              <div>
+                <h4 class="experience-title">{{ exp.title }}</h4>
+                <p class="experience-organization">{{ exp.organization }}</p>
+                <p class="experience-location">📍 {{ exp.location }}</p>
+              </div>
+              <div class="experience-date">
+                <span class="date-badge">
+                  {{ formatDate(exp.startDate) }} - {{ formatDate(exp.endDate!) }}
+                </span>
+              </div>
+            </div>
+            <p class="experience-description">{{ exp.description }}</p>
+            <ul class="achievements-list" *ngIf="exp.achievements && exp.achievements.length > 0">
+              <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

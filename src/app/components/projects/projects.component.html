@@ -1,0 +1,53 @@
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="section-title">My Projects</h2>
+    
+    <div class="filter-buttons">
+      <button 
+        class="filter-btn" 
+        [class.active]="selectedFilter === 'all'"
+        (click)="filterProjects('all')">
+        All Projects
+      </button>
+      <button 
+        class="filter-btn" 
+        [class.active]="selectedFilter === 'featured'"
+        (click)="filterProjects('featured')">
+        Featured
+      </button>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of filteredProjects">
+        <div class="project-image-wrapper">
+          <img [src]="project.image" [alt]="project.name" class="project-image">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" class="project-link" title="View Live Demo">
+                <span class="link-icon">🔗</span>
+                Live Demo
+              </a>
+              <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="project-link" title="View on GitHub">
+                <span class="link-icon">🔗</span>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <div class="project-header">
+            <h3 class="project-name">{{ project.name }}</h3>
+            <span *ngIf="project.featured" class="featured-badge">⭐ Featured</span>
+          </div>
+          <p class="project-description">{{ project.description }}</p>
+          <div class="project-technologies">
+            <span class="tech-tag" *ngFor="let tech of project.technologies">
+              {{ tech }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

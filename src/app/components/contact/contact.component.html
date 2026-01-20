@@ -1,0 +1,125 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-subtitle">Feel free to reach out for collaborations or just a friendly hello</p>
+
+    <div class="contact-content">
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        
+        <div class="info-item">
+          <span class="info-icon">📧</span>
+          <div class="info-details">
+            <p class="info-label">Email</p>
+            <a [href]="'mailto:' + contactInfo.email" class="info-value">{{ contactInfo.email }}</a>
+            <button class="copy-btn" (click)="copyEmail()" title="Copy email">📋</button>
+          </div>
+        </div>
+
+        <div class="info-item" *ngIf="contactInfo.phone">
+          <span class="info-icon">📱</span>
+          <div class="info-details">
+            <p class="info-label">Phone</p>
+            <a [href]="'tel:' + contactInfo.phone" class="info-value">{{ contactInfo.phone }}</a>
+          </div>
+        </div>
+
+        <div class="info-item" *ngIf="contactInfo.location">
+          <span class="info-icon">📍</span>
+          <div class="info-details">
+            <p class="info-label">Location</p>
+            <p class="info-value">{{ contactInfo.location }}</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <h4>Connect With Me</h4>
+          <div class="social-icons">
+            <a *ngIf="contactInfo.github" [href]="contactInfo.github" target="_blank" class="social-link" title="GitHub">
+              <span class="social-icon">🔗</span>
+              GitHub
+            </a>
+            <a *ngIf="contactInfo.linkedin" [href]="contactInfo.linkedin" target="_blank" class="social-link" title="LinkedIn">
+              <span class="social-icon">💼</span>
+              LinkedIn
+            </a>
+            <a *ngIf="contactInfo.twitter" [href]="contactInfo.twitter" target="_blank" class="social-link" title="Twitter">
+              <span class="social-icon">🐦</span>
+              Twitter
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper">
+        <h3>Send Me a Message</h3>
+        
+        <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              [(ngModel)]="formData.name" 
+              required 
+              placeholder="Your name"
+              class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              [(ngModel)]="formData.email" 
+              required 
+              placeholder="your.email@example.com"
+              class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input 
+              type="text" 
+              id="subject" 
+              name="subject" 
+              [(ngModel)]="formData.subject" 
+              placeholder="What's this about?"
+              class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              [(ngModel)]="formData.message" 
+              required 
+              rows="5" 
+              placeholder="Your message here..."
+              class="form-control"></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="submit-btn" 
+            [disabled]="!contactForm.valid || isSubmitting">
+            <span *ngIf="!isSubmitting && !formSubmitted">Send Message</span>
+            <span *ngIf="isSubmitting">Sending...</span>
+            <span *ngIf="formSubmitted">✓ Message Sent!</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; {{ 2026 }} Your Name. Built with Angular. All rights reserved.</p>
+  </div>
+</footer>
