@@ -20,7 +20,6 @@ export class SkillsComponent {
     { name: 'Java', category: 'language', proficiency: 80, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
     { name: 'Spring Boot', category: 'language', proficiency: 80, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
     { name: 'PHP', category: 'language', proficiency: 75, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
-    { name: 'Bootstrap', category: 'language', proficiency: 85, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
     { name: 'Java Swing', category: 'language', proficiency: 70, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
     { name: 'C#', category: 'language', proficiency: 75, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
     { name: 'Python', category: 'language', proficiency: 80, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
@@ -43,6 +42,7 @@ export class SkillsComponent {
     { name: 'AWS', category: 'devops', proficiency: 70, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
     { name: 'Azure', category: 'devops', proficiency: 70, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
     { name: 'GitHub Actions', category: 'devops', proficiency: 75, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
+    
     
     // Soft Skills
     { name: 'Creativity', category: 'soft-skill', proficiency: 90, icon: 'https://img.icons8.com/fluency/96/idea.png' },
