@@ -66,15 +66,6 @@ export class CertificatesComponent implements OnInit, OnDestroy {
       description: 'Certification in Generative AI fundamentals, covering key concepts, applications, and ethical considerations in the field of AI.'
     },
         {
-      id: 7,
-      name: 'M-Files Developer Certification',
-      issuer: 'M-Files',
-      issueDate: '2025-11',
-
-      image: 'assets/certificates/mfiles developer.png',
-      description: 'certification in M-Files development, including customization, integration, and best practices for using the M-Files platform.'
-    },
-        {
       id: 8,
       name: 'IEE Extreme Hacker Certificate',
       issuer: 'IEEE',

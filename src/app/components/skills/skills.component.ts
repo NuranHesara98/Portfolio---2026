@@ -34,7 +34,6 @@ export class SkillsComponent {
     { name: 'Postman', category: 'tool', proficiency: 85, icon: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg' },
     { name: 'Figma', category: 'tool', proficiency: 75, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
     { name: 'MongoDB', category: 'tool', proficiency: 80, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-    { name: 'M-Files', category: 'tool', proficiency: 75, icon: 'https://play-lh.googleusercontent.com/JLJT2Tm8vle-QmALnAFW67czyJkOS8lxZFBpSjjVtzOFrVDpSPWY3Hy6lAxcYML0QPs=w480-h960-rw' },
     { name: 'ELO Digital Office', category: 'tool', proficiency: 75, icon: 'https://www.comex.eu/wp-content/uploads/2023/08/image008.png.webp' },
     
     // DevOps and Cloud
